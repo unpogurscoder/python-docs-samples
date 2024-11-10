@@ -27,12 +27,12 @@ import trainer
 
 
 def run(
-    raw_data_dir: str,
-    raw_labels_dir: str,
-    train_data_dir: str,
-    eval_data_dir: str,
-    train_eval_split: list[int],
-    beam_args: list[str],
+    raw_data_dir: str = "gs://maritime-watch/data/data",
+    raw_labels_dir: str = "gs://maritime-watch/data/labels",
+    train_data_dir: str = "gs://maritime-watch/datasets/train",
+    eval_data_dir: str = "gs://maritime-watch/datasets/eval",
+    train_eval_split: list[int] = [80, 20],
+    beam_args: list[str] = None,  # Optional parameter
 ) -> str:
     labels = pd.concat(
         [
